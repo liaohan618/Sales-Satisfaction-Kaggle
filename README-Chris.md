@@ -47,7 +47,7 @@ I would like to extend my gratitude towards the following team member for her co
 
 ### Data Acknowledgment
 
-The [data]((https://www.kaggle.com/datasets/matinmahmoudi/sales-and-satisfaction) used in this project was provided by MATIN MAHMOUDI.
+The [data](https://www.kaggle.com/datasets/matinmahmoudi/sales-and-satisfaction) used in this project was provided by MATIN MAHMOUDI.
 
 - Columns including **Group**, **Customer Segment**, **Sales (Before & After)**, **Customer Satisfaction Scores (Before & After)**, and **Purchase Made (Y/N)**. 
 
