@@ -1,4 +1,4 @@
-# Analysis of Anxiety Trends from CDC Data: Q2 2020 to Q2 2023
+# Analysis of Sales and Satisfaction Scores for 2024
 
 ## Table of Contents
 
