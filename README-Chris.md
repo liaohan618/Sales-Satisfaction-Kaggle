@@ -383,7 +383,7 @@ Accomplishing these goals first would allow us to proceed with investigating dat
 ## Project Folder Structure
 
 ```plaintext
-CHOCAnxiety/
+Sales-Satisfaction-Kaggle/
 |
 ├── models/       # Folder containing pictures of model
 |
