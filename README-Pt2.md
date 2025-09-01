@@ -64,42 +64,6 @@ One dataset contains missing values (NaNs) and the other does not. These dataset
 
 Below is a summary of the key variables in the dataset:
 
-**Mental Health Indicators**
-- **Indicator**:Categorical (Symptoms of Anxiety Disorder, Symptoms of Depressive Disorder, Symptoms of Anxiety Disorder or Depressive Disorder)
-  - Labeled disorder
-- **Value**: Numerical (e.g. 18.6)
-   - Value indicating the likelihood of a disorder; higher values mean higher correspondence
-   - This is our **main response variable** for assessing anxiety likelihood
-- **Low CI**: Numerical (e.g. 14.6)
-  - Lowerbound of the confidence interval
-- **High CI**: Numerical (e.g. 23.1)
-  - Upperbound of the confidence interval
-- **Confidence Interval**: Numerical (e.g. 14.6 - 23.1)
-  - The full range of the confidence interval
-- **Quartile Range**: Numerical (e.g. 16.5 - 20.7)
-  - Quartile range shown as an interval (?)
-
-**Demographic Variables**
-- **Group**: Categorical (National Estimate, By Age, By Gender, By Race/Hispanic ethnicity, By Education, By State)
-  - Type of group
-- **State**: Categorical (e.g. United States, Alabama, Alaska, etc.)
-  - Full state name in the United States including "United States" and "District of Columbia"
-- **Subgroup**: Categorical (e.g. United States, 18-29 years, Male, Hispanic or Latino, etc.)
-  - Type of subgroup within a certain group
-
-**Temporal Variables**
-- **Week**: Categorical (e.g. 1, 2, 3, etc.)
-  - Numeric value indicating which week # it is; total of 7 observed weeks
-- **Week Label**: Categorical (e.g. Apr 23 - May 5)
-  - Date (month and day) for a certain week
-       - Week 1: Apr 23 - May 5
-       - Week 2: May 7 - May 12
-       - Week 3: May 14 - May 19
-       - Week 4: May 21 - May 26
-       - Week 5: May 28 - June 2
-       - Week 6: June 4 - June 9
-       - Week 7: June 11 - June 16
-
 ## Exploratory Data Analysis
 
 An EDA investigation was done for the following predictor variables: **Age**, **Education**, **Gender**, **Race**, **States**, **Weeks**. By looking into how the data is distributed for these variables, we can gain greater insight into patterns and trends that correspond with increases in anxiety indicators.
@@ -113,118 +77,6 @@ Note: In the Jupyter Notebook containing analysis on [Preliminary Analysis](code
 ![Fig 2](EDA/Age/box.png)
 
 **Figure 2: Boxplot of Score Value Distributions by Age.** The IQR (Interquartile Range) for each box per age group differs in length. Younger age groups, especially 18-29, seem to have higher levels of anxiety compared to the rest of the cohort, and their data is skewed. A noticeable gap between age groups 50-59 and 60-69 can be seen. Factors such as generational trauma or a competitive job market possibly cause this disparity between younger and older generations.
-
-![Fig 3](EDA/Age/meanval.png)
-
-**Figure 3: Barplot of Mean Score Value by Age.** Ages 18-29 have the highest mean anxiety value of approximately 41, with all other age groups having less mean anxiety which each successive group.
-
-![Fig 4](EDA/Age/stats.png)
-
-**Figure 4: Statistics of Score Value by Age.** Ages 40-49 have the widest spread in their data; speculations could include a mid-life crisis or traumatic event.
-
-![Fig 5](EDA/Age/val.png)
-
-**Figure 5: Distribution of Score Value by Age.** Ages 80+ have the lowest anxiety value compared to the rest of the age groups.
-
-### Education
-
-![Fig 6](EDA/Education/box.png)
-
-**Figure 6: Boxplot of Score Value Distributions by Education.** Those having a Bachelor's degree or higher experienced less anxiety compared to lesser degrees. The boxplot for the Bachelor's degree is highly skewed left, which could correspond to the few other people who have higher degrees such as a Master's degree or PhD. Groups who do not have a high school diploma experienced the greatest levels of anxiety among the educational levels.
-
-![Fig 7](EDA/Education/meanval.png)
-
-**Figure 7: Barplot of Mean Score Value by Education.** The mean value for Bachelor's degree fell below that of the other educational levels. Less than a High School degreee was at maximum anxiety levels.
-
-![Fig 8](EDA/Education/stats.png)
-
-**Figure 8: Statistics of Score Value by Education.** Both Bachelor's degree or higher holders and less than High School Diploma had the greatest spread in their data.
-
-![Fig 9](EDA/Education/val.png)
-
-**Figure 9: Distribution of Score Value by Education.** Data points for Bachelor's degree were much lower compared to those of other educational levels.
-
-### Gender
-
-For the hypothesis testing (refer to [Gender Jupyter Notebook](code/(CHRIS)%20Anxiety%20Prelim%20Analysis%20+%20Gender.ipynb)), we compared whether males had a lower mean score value than females. The conclusions to these tests were that **there was enough evidence to conclude that males have a LOWER mean score value for anxiety than females**.
-
-![Fig 10](EDA/Gender/box.png)
-
-**Figure 10: Boxplot of Score Value Distributions by Gender.** There appears to be a much greater gap in anxiety score values for females than that of males. Also, the distribution of anxiety score values for Females is extremely left-skewed. Factors could be societal pressure and unequal opportunities for females due to gender discrimination.
-
-![Fig 11](EDA/Gender/meanval.png)
-
-**Figure 11: Barplot of Mean Score Value by Gender.** Females' mean score value exceeds the overall mean anxiety score value, whereas Males' mean score value falls under the overall.
-
-![Fig 12](EDA/Gender/statsf.png)
-
-**Figure 12: Statistics of Score Value for Females.** Females have a much higher mean anxiety value than Males by about 8 points.
-
-![Fig 13](EDA/Gender/statsm.png)
-
-**Figure 13: Statistics of Score Value for Males.** Males have a slightly larger spread in data compared to that of females.
-
-![Fig 14](EDA/Gender/val.png)
-
-**Figure 14: Dummy Plot of Gender.** We observe Females having a higher average anxiety value compared to Males, as evident by the positive slope from Male to Female.
-
-### Race 
-
-![Fig 15](EDA/Race/box.png)
-
-**Figure 15: Boxplot of Score Value Distributions by Race.** Each box plot for each race is skewed; specifically, left-skewed distributions include Non-Hispanic Whites and Non-Hispanic Asians, which indicate that certain individuals within those groups experience decreased levels of anxiety compared to the rest; right-skewed distributions include Non-Hispanic Blacks, Hispanics, and Mixed Races, indicating that some individuals experience increased levels of anxiety. 
-
-![Fig 16](EDA/Race/meanval.png)
-
-**Figure 16: Barplot of Mean Score Value by Race.** The following ranking is from least anxious to most anxious based on the mean score value for anxiety: Asians, Whites, Blacks, Hispanics, Mixed Races.
-
-![Fig 17](EDA/Race/stats.png)
-
-**Figure 17: Statistics of Score Value by Race.** Mixed Race people have the largest spread in their data distribution followed by Asians.
-
-![Fig 18](EDA/Race/val.png)
-
-**Figure 18: Distribution of Score Value by Race.** Similar to the barplot, we see that Asians and Whites tend to have lower anxiety scores compared to those of other races. We speculate that some members of certain ethnic communities may lack the same resources and access to care as other races, whether it be due to discrimination or language barriers, which could be contributing to a rise in anxiety score values.
-
-### States
-
-![Fig 19](EDA/States/heatmap1.png)
-
-**Figure 19: Heatmap of Score Value by States.** A monochrome scheme of various shades of red illustrate the magnitude of anxiety score value for each state; the redder a state appears to be, the more likely it is to have a higher mean score value.
-
-![Fig 20](EDA/States/heatmap2.png)
-
-**Figure 20: Heatmap of States with Significant Levels of Anxiety.** Using Alabama as a baseline for mean anxiety score, states which appear to have a color filled in are considered to be under greater. Southern states such as Texas, Arkansas, and Florida appear to have the greatest scores of anxiety, with Louisiana and Missouri viewed as having the greatest anxiety score levels. States known for large urban populations, such as California and New York, also seem to have discernable levels for anxiety.
-
-![Fig 21](EDA/States/heatmap3.png)
-
-**Figure 21: Heatmap of States with Significant Levels of Depression.** Similar to the heatmap for anxiety, depression disorder seems to correspond with the findings for states with high levels of anxiety.
-
-![Fig 22](EDA/States/meanval.png)
-
-**Figure 22: Barplot of Mean Score Value by States.** Mean anxiety scores decrease from left to right, meaning that left had the highest score and the right had the lowest score. The top five states for greatest anxiety were (1) Louisiana (2) Mississippi (3) Florida (4) Nevada (5) California. The states with the lowest anxiety scores were (1) North Dakota (2) Wyoming (3) Iowa (4) Nebraska (5) Hawaii
-
-<p>
-   <img src="EDA/States/stats1.png"/>
-   <img src="EDA/States/stats2.png"/>
-</p>
-
-**Figure 23: Statistics of Score Value by States.** These are a list of the states ranked from highest mean anxiety score to lowest mean anxiety score.
-
-### Week
-
-Recall the labels for the following weeks:
-   - Week 1: Apr 23 - May 5
-   - Week 2: May 7 - May 12
-   - Week 3: May 14 - May 19
-   - Week 4: May 21 - May 26
-   - Week 5: May 28 - June 2
-   - Week 6: June 4 - June 9
-   - Week 7: June 11 - June 16
-
-![Fig 24](EDA/Week/meanval.png)
-
-**Figure 24: Barplot of Mean Score Value by Week.** The middle of June experienced the greatest mean anxiety value, whereas the middle of May experienced the lowest mean anxiety value.
 
 ![Fig 25](EDA/Week/stats.png)
 
@@ -248,109 +100,19 @@ The Jupyter Notebook for [multivariate linear regression](code/(CHRIS)%20MLR%20m
 
 **Figure 26: Model Summary for Simple Linear Regression Model for Age.** The model accuracy was 97.6% (or 97.2% adjusted), with the probability of the F-statistic being low enough to suggest evidence for differences in mean anxiety score among ages. Although this model accuracy is the highest for all of the simple linear regression models for all predictor variables, the magnitude of the accuracy raises concern for possibly overfitting the data, suggesting that hyperparameter tuning or optimization would be needed before firmly asserting the idea of mean difference among ages as suggested by the model.
 
-#### Education
-
-![Fig 27](Model%20Building/SLR/Education/model_summary.png)
-
-**Figure 27: Model Summary for Simple Linear Regression Model for Education.** The model accuracy was 89.4% (or 88.0% adjusted), with the probability of the F-statistic being low enough to suggest evidence for differences in mean anxiety score among education. All of the coefficients support the claims made in the EDA portion for education. 
-
-#### Gender
-
-![Fig 28](Model%20Building/SLR/Gender/model_summary.png)
-
-**Figure 28: Model Summary for Simple Linear Regression Model for Gender.** The model accuracy was 92.1% (or 91.4% adjusted), with the probability of the F-statistic being low enough to suggest evidence for differences in mean anxiety score among genders. The model coefficients support the notion that Females have a higher mean anxiety score than Males.
-
-#### Race
-
-![Fig 29](Model%20Building/SLR/Age/model_summary.png)
-
-**Figure 29: Model Summary for Simple Linear Regression Model for Race.** The model accuracy was 81.6% (or 79.1% adjusted). The probability of the F-statistic suggests that there is a significant difference in mean anxiety score among different races. However, the model does not identify Blacks to be significant (p-value is above 0.05), which means that we cannot conclude whether the Black community had an impact on mean anxiety scores or not.
-
-#### States
-
-![Fig 30](Model%20Building/SLR/States/model_summary.png)
-
-**Figure 30: Model Summary for Simple Linear Regression Model for States.** The model accuracy was 46.9% (or 38.2% adjusted). Although the probability of the F-statistic is low enough to reject the null hypothesis (i.e. there is enough evidence to conclude that there is a difference in mean anxiety score values among states), the correlation among states for mean anxiety score seems middling to low.
-
-### Multivariate Linear Regression Model
-
-![Fig 31](Model%20Building/MLR/model_summary.png)
-
-**Figure 31: Model Summary for Multivariate Linear Regression Model.** We observe that the multivariate regression model predicts with 77.3% accuracy (or 73.2% adjusted accuracy). We also see that the F-statistic is fairly large, indicating that the regression model performs well with the included predictor variables we have chosen.
-
-![Fig 32](Model%20Building/MLR/sig_weeks.png)
-
-**Figure 32: List of Significant Weeks According to Multivariate Linear Regression Model.** Weeks 3 and 4 correspond to  May 14 - May 19 and May 21 - May 26 respectively.
-
-![Fig 33](Model%20Building/MLR/sig_groups.png)
-
-**Figure 33: List of Significant Groups According to Multivariate Linear Regression Model.** It is interesting to note that Education, Gender, Race, and State were considered significant groups, but Age and Week seem to bear no significance when evaluated with the multivariate linear regression model.
-
-![Fig 34](Model%20Building/MLR/sig_states.png)
-
-**Figure 34: List of Significant States According to Multivariate Linear Regression Model.** These results seem consistent with the findings we had for the EDA of the states, particularly the heatmap for anxiety over states experiencing heightened levels of anxiety.
-
-![Fig 35](Model%20Building/MLR/sig_subgroups.png)
-
-**Figure 35: List of Significant Subgroups According to Multivariate Linear Regression Model.** Unlike the macroscopic feature importance of *groups*, certain subgroups of Age, excluding 18-29, were considered important. It is also worth noting that some subgroups were not considered significant, such as Black and Hispanic subgroups for Race.
-
 ## Conclusion
 
 ### Insights
 
-The following demographic groups experienced heightened indicators of anxiety:
-
-- Age: **Ages 18-29 (Young Adults)**
-  - Potential External Factors:
-     - Competitive Job Market
-     - Generational Trauama
-- Education: **Those with an Associate's Degree** and **Those with Less than a High School Degree**
-   - Potential External Factors:
-     - Competitive job market hires those with greater degree levels
-- Gender: **Females**
-  - Potential External Factors:
-     - Discrimination
-     - Societal Pressure
-- Race: **Hispanics** and **people of mixed race**
-  - Potential External Factors:
-     - Socioeconomic Inequality; Lack of Equal Access 
-       - Racial Wage Gap
-       - Language Barriers; limits healthcare access to medical care<sup>[5]</sup>
-       - Health Disparities
-     - Discrimination
-- States: **Southern States** and **States with Large Urban Populations**
-  - Southern States: Texas, Alabama, Louisiana, Missouri, etc.
-    - Higher levels of discrimination
-    - Less developed economically and technologically
-    - Harsh Weather 
-  - California, New York, etc.
-    - Higher intense work culture
-    - Dense populations; greater crowds
- - Top 5 Most Anxious States
-    - (1) Louisiana
-    - (2) Mississippi
-    - (3) Florida
-    - (4) Nevada
-    - (5) California
-
-By identifying groups who are at higher risks of anxiety, our focus and future analyses can be directed towards assisting those groups to reduce levels of anxiety.
+The following factors impact Sales and Customer Satisfaction Scores:
 
 ### Limitations
 
-One of the attributes that we failed to investigate into was the temporal aspects of the dataset. Looking into the weeks, especially data points originating from the COVID-19 pandemic period, would give us insight into whether certain years, seasons, months, or weeks experience increased anxiety. This limitation could be reinforced by the choice of week labels, where these weeks were only late April to Mid June.
-
-Another limitation of our study was not optimizing model performance or trying other supervised machine learning models, as those models could offer greater insight into feature importance. We also did not look into other evaluation metrics other than accuracy.
+Due to a lack of temporal data, we are unable to account for seasonal impacts on sales and customer satisfaction scores. With our current predictors, we cannot assert which factors impact purchases made. It could also help to get information on what products are being sold as well as what intervention is being introduced to contextualize the experiment better.
 
 ### Future Plans
 
-We hope to implement an unsupervised learning approach to develop a better understanding of how these variables interact with one another. Our goals would include:
-- Determining the covariance to characterize the patient population
-   - Example: Higher education patterns within racial groups can contribute to lower anxiety scores
-- Obtaining a higher quality data set to solidify and further our findings
-
-We also plan to do more time series analysis in order to determine if anxiety was heightened during the COVID-19 Pandemic as well as recent trends in anxiety. 
-
-Accomplishing these goals first would allow us to proceed with investigating data provided by CHOC directly by assisting in narrowing our focus and priorities, eventually leading to model deployment by CHOC in order to alleviate populations suffering under anxiety.
+We hope to assess if temporal data (i.e. seasonal, monthly, etc.) has an impact on sales and customer satisfaction scores, which would involve a time-series analysis. We also hope to investigate into further factors that could be impacting purchases made, provided that our current predictors fail to predict this specific response variable.
 
 ## Dependencies
 
