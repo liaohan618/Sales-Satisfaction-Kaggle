@@ -53,26 +53,21 @@ The [data](https://www.kaggle.com/datasets/matinmahmoudi/sales-and-satisfaction)
 
 ## Background
 
-Anxiety disorders are among the most prevalent mental health conditions, affecting millions of individuals across various demographic groups; the Anxiety and Depression Association of America (ADAA) reports that 19.1% of US adults and 31.9% of adolescents annually are diagnosed with anxiety disorders<sup>[1]</sup>. Psych Central has also reported that approximately 50% of people have Generalized Anxiety Disorder symptoms for 2+ years before being diagnosed<sup>[2]</sup>. 
-
-Understanding the contributing factors and disparities in anxiety prevalence is crucial for developing targeted interventions and providing effective care. Although there are screening tools that exist for depression (PHQ-2) based on various risk factors<sup>[3]</sup>, it is unknown if there are tools of equal capabilities for screening anxiety disorders. The COVID-19 pandemic, which began in early 2020, significantly disrupted lives worldwide, amplifying stressors such as health concerns, economic instability, and social isolation. These factors have contributed to a marked increase in anxiety symptoms across diverse populations.
-
-The Centers for Disease Control and Prevention (CDC) has collected extensive data on mental health trends, offering a valuable resource for analyzing patterns of anxiety over time. This project leverages CDC data spanning April 4th, 2020 to June 30th, 2023 to explore demographic disparities in individuals exhibiting signs of anxiety. By examining variables such as age, gender, race/ethnicity, socioeconomic status (e.g. degree level), and geographic region, this analysis aims to uncover underlying trends and potential contributing factors.
-
-The findings will be tailored to support CHOC (Children's Health of Orange County) medical staff and physicians in their efforts to address anxiety within their patient populations. By identifying at-risk groups and understanding the demographic factors influencing anxiety, this project seeks to enable evidence-based decision-making, inform resource allocation, and promote equitable care practices. This work is part of a broader commitment to advancing mental health outcomes through data-driven approaches, and its insights can benefit future data analyses for CHOC-specific data.
+This part of the README is a continuation (or an off-shoot) of the main part of the project. The context is largely the same, where synthetic data is provided, giving demographic and numerical data regarding sales and customer satisfaction scores with and without introducing an intervention. The primary difference of this project focuses on what happens when there is missing data; there is the potential of bias being introduced as less data is available for analysis. There are a few approaches that one can take to deal with this
 
 ## Methodology
 
 Our approach consists of the following steps:
-1. Using the public dataset provided by the CDC, we can begin investigating potential factors of anxiety.
-2. After an exploratory search of these variables, we can deploy models for further insight findings. We will start with supervised machine learning such as the multivariate regression model, then deploy an unsupervised learning techniques such as clustering and covariance in order to find hidden patterns within these groups.
-3. Developing these findings will enable us to apply their value to further data analyses when CHOC provides their data, accelerating our search into anxiety within pediatric patients.
+1. We will conduct an initial EDA of the data to scope out trends and patterns within the data.
+2. We will apply approaches (mainly imputation) to deal with missing data.
+3. We will apply machine learning models to assess which factors impact sales and customer satisfaction scores, as well as if a purchase was made.
+4. We will conduct hypothesis testing for assessing the intervention's impact on sales and customer satisfaction scores.
 
 ## Data Description
 
-This dataset contains information collected by the Centers for Disease Control and Prevention (CDC) on anxiety-related indicators from April 4th, 2020 to June 30th, 2023. The data has been curated for the purpose of analyzing demographic disparities in anxiety prevalence and understanding potential contributing factors. It includes various demographic, socioeconomic, and temporal attributes to enable in-depth analysis. The following dataset was used:
+One dataset contains missing values (NaNs) and the other does not. These datasets contain information on sales and customer satisfaction before and after an intervention, as well as purchase data for control and treatment groups. The dataset is synthetic and was created for use in statistical analysis. This is an original dataset. The following version of the dataset is used:
 
-- `anxiety_data.csv`
+- `Sales_without_NaNs.csv`
 
 ![Dataset](EDA/Dataset.png)
 
