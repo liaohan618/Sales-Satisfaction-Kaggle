@@ -10,20 +10,7 @@
 4. [Data Description](#data-description)
    - [Variables](#variables)
 5. [Exploratory Data Analysis](#exploratory-data-analysis)
-   - [Age](#exploratory-data-analysis-age)
-   - [Education](#exploratory-data-analysis-education)
-   - [Gender](#exploratory-data-analysis-gender)
-   - [Race](#exploratory-data-analysis-race)
-   - [States](#exploratory-data-analysis-states)
-   - [Week](#exploratory-data-analysis-week)
 6. [Modeling](#modeling)
-   - [Simple Linear Regression Models](#simple-linear-regression-models)
-        - [Age](#simple-linear-regression-models-age)
-        - [Education](#simple-linear-regression-models-education)
-        - [Gender](#simple-linear-regression-models-gender)
-        - [Race](#simple-linear-regression-models-race)
-        - [States](#simple-linear-regression-models-states)
-   - [Multivariate Linear Regression Model](#multivariate-linear-regression-model)
 7. [Conclusion](#conclusion)
    - [Insights](#insights)
    - [Limitations](#limitations)
@@ -370,10 +357,10 @@ Accomplishing these goals first would allow us to proceed with investigating dat
 - pandas
 - matplotlib
 - scipy
-- plotly
 - statsmodels
 - seaborn
 - numpy
+- sklearn
 
 ## Project Folder Structure
 
